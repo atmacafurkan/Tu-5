@@ -7,3 +7,7 @@ Explanation here: https://www.youtube.com/watch?v=1RwJbhkCA58&t=1s
 Overleaf template: https://www.overleaf.com/latex/templates/better-poster-for-scientific-presentation/xpcssnwsgwqp
 
 Original powerpoint by Mike Morrison here https://osf.io/vxqr6/
+
+# NOTE
+
+I have edited the original template. Tried to leave comments. If you have any questions contact me!
