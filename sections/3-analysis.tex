@@ -1,0 +1,40 @@
+\section{Analysis}
+    
+    \subsection{Possessives in English}
+    
+\cite{barker2011possessives} classifies English possessives in two, ones that are formed with relational nouns, and ones that are formed with non-relational nouns (\ref{possessives}). While the first already has the relation, the second needs the relation to be provided from the context. 
+    
+    \begin{exe}
+    \ex \label{possessives} \begin{xlist}
+    \ex John's brother 
+    \ex John's planet \glt `The planet that John likes, the planet that John is watching, etc.'
+    \end{xlist}
+    \end{exe}
+    
+As cited in \cite{barker2011possessives}, \cite{vikner2002semantic} explain the selection of the relation to be dependent on the connection that the noun and the context holds.
+    
+    \rule{\columnwidth}{0.2pt}
+    
+    \subsection{Proposal}
+I propose the formal denotation in (\ref{denotation}) for the derivational agent nominalizer \textit{-CI} that takes noun bases. The relation that the derived noun and the base holds is provided from the context hence $g_c(i)$. I use the operation restrict as in \cite{dayal2003semantics} since the base noun is non-referential and non-referential objects are treated as pseudo-incorporation in Turkish \citep{ozturk2009incorporating}. 
+    
+    \begin{exe}
+    \ex \label{denotation} 
+    $[[-{\Ci}]]_{\textless et,et \textgreater}$ = $\lambda{f}.\lambda{x}.Gen\,e\,\exists{y}\, f(y) \wedge g_c(i)(e)(y) \wedge AG(e,x)$
+    \end{exe}
+    
+The tendency of people is to interpret any modification as a modification for the derived noun as opposed to a modifier for the base, that's why I keep all the operations as a collapsed denotation. Assuming that all verbs are of type D$_{\textless e,vt\textgreater}$ the denotation for the Sakha \textit{-AAccI} and the Turkish \textit{-(y)IcI} can be updated as in (\ref{denotation2}). Both denotations provided here does away with Chierchia's $^{\frown}$ operator since the internal argument is treated as a pseudo incorporated argument and the event argument is closed by the  $Gen$ operator.
+
+\begin{exe}
+    \ex \label{denotation2}
+      $[[-(y)IcI]]_{\textless \textless e,vt\textgreater, et \textgreater}$ = $\lambda{f}.\lambda{x}.\exists{y}\,Gen\,e\,f(e)(y) \wedge AG(e,x)$
+\end{exe}
+
+
+    \subsection{Discussion}
+
+Considering all verbs as of type D$_{\textless e,vt\textgreater}$ is not without a drawback. An unergative verb can be considered as having only an external argument. \textit{-(y)IcI} suffix is also capable of deriving agent nominals from unergative verbs. However all unergative verbs allow for cognate objects. I take this ability of unergatives to have a cognate object as proof for their denotation being D$_{\textless e,vt\textgreater}$. Unaccusatives are also thought as D$_{\textless e,vt\textgreater}$ but, as one of the reviewers pointed out, they are incompatible with the $AG(e,x)$ in the denotation and that's why agent nominals from unaccusative verbs can not be formed with \textit{-(y)IcI}. The preference of people for modifying the derived noun as opposed to the base can be tied to the order of processing in language, where encodings are performed first in a by word fashion \citep{lewis2006computational}. \textit{-CI} being a suffix is not considered as an operator on phrasal structures first.
+
+\subsection{Conclusion}
+
+As a result of the provided denotations, using indices from context to relation within a denotation of a derivational suffix is against a strict view of lexical integrity \cite{bresnan1995lexical} but is compatible with a relaxed view of it \citep{lieber2006lexical,goksel2015phrasal,kunduraci2016morphology} where morphology can take syntactic inputs.

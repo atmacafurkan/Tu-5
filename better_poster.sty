@@ -1,0 +1,232 @@
+% load this first
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+
+% other packages 
+\usepackage[export]{adjustbox}
+\usepackage{anyfontsize}
+\usepackage[T1]{fontenc}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[utf8x]{inputenc}
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{vwcol}
+
+% for footnote placement
+\usepackage[bottom]{footmisc}
+
+%for caption label and font size
+\usepackage[labelfont=it,bf]{caption}
+\DeclareCaptionFormat{huge1}{\fontsize{24}{32}\selectfont{#1#2#3}}
+\captionsetup{format=huge1}
+
+% multiple columns
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+
+
+% To change section number font sizes
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\fontsize{50}{68}\bfseries}{\thesection}{1em}{}
+  
+\titleformat{\subsection}
+  {\normalfont\fontsize{40}{60}\bfseries}{\thesubsection}{1em}{}
+
+% for floats
+\usepackage{float}
+
+% for trees
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\tikzset{every tree node/.style={align=center, anchor=north, font={\fontsize{24}{32}\selectfont}}}
+\usetikzlibrary[positioning]
+
+% set margins
+\newcommand\postermargin{1cm}
+\usepackage[margin=\postermargin, top=0cm, bottom=0cm]{geometry}
+
+% a different tree drawer
+\usepackage[linguistics]{forest}
+\forestset{sn edges/.style={for tree={
+ parent anchor=south, child anchor=north, s sep=10mm, inner sep=0}}}
+
+% numbered examples
+\usepackage{gb4e}
+\renewcommand{\eachwordone}{\textit}
+\noautomath
+
+\usepackage{natbib}
+\bibliographystyle{apa}
+
+% sans serif font
+\renewcommand{\familydefault}{\sfdefault}
+
+% sets page numbering off
+\pagenumbering{gobble}
+
+% images path
+\graphicspath{{./images/}}
+
+% poster color
+\colorlet{exp}{PineGreen}
+\colorlet{methods}{Maroon}%or BrickRed
+\colorlet{theory}{MidnightBlue}
+
+% makes title
+\makeatletter
+\def\@maketitle{
+  \vspace{0.5cm}
+    {\Huge \bf
+        \begin{flushleft}
+            \@title
+        \end{flushleft}
+    }\vspace{-0.5em}
+    { \@author}
+}
+\makeatother
+
+% makes header
+\newcommand{\makefinding}[1]{
+    \vspace*{-1cm} % get rid of random white space
+    \noindent\makebox[\linewidth][c]{%
+      \colorbox{\postertype}{%
+        \parbox[t][0.15\paperheight][c]{\paperwidth}{%
+          \hspace*{\dimexpr\hoffset+\oddsidemargin+1in\relax}%
+          \begin{minipage}[c][0.15\paperheight][c]{\textwidth}
+          \textcolor{white}
+            {
+            \begin{center}
+                 \nohyphens{#1}
+            \end{center}
+            }
+          \end{minipage}%
+        }%
+      }%
+    }\par\medskip
+}
+
+% makes footer
+\newcommand{\makefooter}[2]{
+    \vspace*{\fill}
+    \noindent\makebox[\linewidth][c]{%
+      \colorbox{\postertype}{%
+        \parbox[c][0.10\paperheight][c]{\paperwidth}{%
+          \hspace*{\dimexpr\hoffset+\oddsidemargin+1in\relax}%
+          \begin{minipage}[c][0.09\paperheight][c]{0.15\textwidth}
+                \includegraphics[height=0.09\paperheight, left]{#2}
+          \end{minipage}
+          \begin{minipage}[c][0.09\paperheight][c]{0.3\textwidth}
+              \textcolor{white}
+                {\large{
+                   \fontsize{50}{68}\selectfont \bf $\leftarrow$ Resources}
+                }  
+          \end{minipage}
+          \hfill
+          \begin{minipage}[c][0.09\paperheight][c]{0.2\textwidth}
+            \includegraphics[height=0.09\paperheight, left]{#1}
+          \end{minipage}
+        }%
+      }%
+    }\par\medskip
+}
+
+
+% makes upper footer
+\newcommand{\makeupperfooter}[1]{
+    \noindent
+    \parbox[t][0.14\paperheight][t]{\linewidth}{%
+    
+        {\let\newpage\relax\maketitle}
+        #1
+    }
+}
+
+% alternative footer
+\newcommand{\makealtfooter}[2]{
+    \vspace*{\fill}
+    \noindent\makebox[\linewidth][c]{%
+        \parbox[c][0.14\paperheight][c]{\paperwidth}{%
+          \hspace*{\dimexpr\hoffset+\oddsidemargin+1in\relax}%
+          \begin{minipage}[c][0.14\paperheight][c]{0.3\textwidth}
+            % your logo here
+            \includegraphics[height=0.11\paperheight, left]{#1}
+            \end{minipage}
+          \hfill
+          \begin{minipage}[c][0.14\paperheight][c]{0.4\textwidth}
+            \begin{flushright}
+                \textcolor{white}
+                {\large{
+                    Download the paper $\rightarrow$}
+                }
+                \end{flushright}
+          \end{minipage}
+          \begin{minipage}[c][0.14\paperheight][c]{0.2\textwidth}
+                \includegraphics[height=0.11\paperheight, left]{#2}
+          \end{minipage}
+        }%
+      }%
+    }\par\medskip
+
+
+
+% makes main column
+\newcommand{\makemain}[1]{
+    \noindent
+    \parbox[t][0.7\paperheight][t]{0.70\linewidth}{%
+    
+        {\let\newpage\relax\maketitle}
+        #1
+    }
+}
+
+\newcommand{\makemainfull}[1]{
+    \noindent
+    \parbox[t][0.55\paperheight][t]{\linewidth}{%
+    
+        {\let\newpage\relax\maketitle}
+        #1
+    }
+}
+
+% makes additional figures column
+\newcommand{\makeextracolumn}[1]{
+    \hfill\begin{tikzpicture}[overlay]
+    \draw[\postertype, very thick] (0,0.5\paperheight) -- (0,-0.8\paperheight);
+    \end{tikzpicture}
+    \hfill
+    \parbox[t][0.6\paperheight][t]{0.25\linewidth}{
+        \section*{Footnotes}
+        
+        {\scriptsize
+        #1
+        }
+    }
+}
+
+
+\usepackage{leipzig}
+\makeglossaries
+
+\newleipzig{aor}{aor}{aorist}
+\newleipzig{and}{and}{and}
+\newleipzig{case}{case}{case}
+\newleipzig{evi}{ev}{evidential}
+\newleipzig{prob}{prob}{probability}
+\newleipzig{nec}{nec}{necessitive}
+\newleipzig{pref}{pref}{prefix}
+\newleipzig{fp}{fp}{free participle}
+\newleipzig{iness}{iness}{inessive}
+\newleipzig{ill}{ill}{illative}
+\newleipzig{pron}{pron}{pronoun}
+\newleipzig{dim}{dim}{diminutive}
+\newleipzig{conj}{conj}{conjoiner}
+\newleipzig{sup}{sup}{suppletive}
+\newleipzig{prv}{prv}{preverb}
+\newleipzig{emp}{emp}{emphasis}
+\newleipzig{or}{or}{or}
+\newleipzig{abil}{abil}{ability}
+\newleipzig{adp}{adp}{adposition}
+\newleipzig{ci}{ci}{agent nominalizer}

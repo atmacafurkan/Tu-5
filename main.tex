@@ -1,0 +1,86 @@
+\documentclass[a0paper]{article}
+
+\usepackage{better_poster}
+
+%%% To fix gb4e sentences from appearing small, and make them scale with font selection
+\def\gll%                 % Introduces 2-line text-and-gloss.
+   {\begin{flushleft}
+     \ifx\@gsingle1%           conditionally force single spacing (hpk/MC)
+        \vskip\baselineskip\def\baselinestretch{1}%
+        \@selfnt\vskip-\baselineskip\fi%
+    \bgroup
+    \twosent
+   }
+\def\glll%                 % Introduces 3-line text-and-gloss.
+   {\begin{flushleft}
+     \ifx\@gsingle1%        conditionally force single spacing (hpk/MC)
+        \vskip\baselineskip\def\baselinestretch{1}%
+        \@selfnt\vskip-\baselineskip\fi%
+    \bgroup
+    \threesent
+   }
+%%%
+% ---- fill in from here
+
+% authors
+\title{\fontsize{60}{90}\selectfont Compositional Analysis of Turkish Agent Nominalizers, Tu\texttt{+}$^5$}
+\author{\fontsize{38}{42}\selectfont Furkan Atmaca, Boğaziçi University}
+
+% type of poster: [exp]erimental results, [methods], [theory]
+% Disclaimer: the original classification had "study" and "intervention" as separate categories. I group them under experimental results.
+\newcommand\postertype{theory} % [exp],[methods],[theory]
+
+\begin{document}
+
+% main point of your study
+\makefinding{
+{\fontsize{90}{125}\selectfont Turkish \textbf{\textit{-CI}} uses indices from \textbf{context} to relations in forming \textbf{derivations}.}
+}
+
+
+% \makemain{
+% }{
+
+% }
+
+
+% the main text of your poster goes here
+\makemainfull{\fontsize{24}{32}\selectfont
+    % you can have 1 or 2 columns
+    \raggedcolumns
+    \begin{multicols}{3}
+   
+    \input{sections/1-background.tex}
+\columnbreak
+    \input{sections/2-puzzle.tex}
+\columnbreak
+    \input{sections/3-analysis.tex}
+${}$
+    \end{multicols}
+
+}
+% If you have extra figures or data to show
+% \makeextracolumn{\fontsize{20}{24}\selectfont
+% \footnotemark[1] For this analysis my assumptions include; a DP level for cased arguments in Turkish \citep{ozturk2005case}, a Voice head responsible for setting argument structure \citep{kratzer1996severing} and a functional head T$_{o}$ for accusative case assignment \citep{pesetsky2004tense} which is absent hence the lack of accusative in case alternating verbs.
+
+% \input{sections/4-discussion.tex}
+    
+    
+% }
+
+% footer
+% generate qr code from https://www.qr-code-generator.com/ and replace qr_code.png
+% default: barcode on the left
+\vfill
+\rule{\linewidth}{0.2pt}
+\makeupperfooter{\fontsize{24}{32}\selectfont
+\input{sections/4-upperfoot.tex}
+
+}
+
+\makefooter{images/logo.png}{images/qr-code.png}
+
+% replace with this like for barcode on the right
+%\makealtfooter{images/uni_logo.png}{images/qr-code.png}
+ 
+\end{document}
